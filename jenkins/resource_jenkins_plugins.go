@@ -37,7 +37,7 @@ func resourcePluginCreate(d *schema.ResourceData, m interface{}) error {
 	}
 
 	d.SetId(name)
-	d.Set("version", version)
+	_=d.Set("version", version)
 	return nil
 }
 
@@ -57,7 +57,7 @@ func resourcePluginRead(d *schema.ResourceData, m interface{}) error {
 		return nil
 	}
 
-	d.Set("version", plug.Version)
+	_=d.Set("version", plug.Version)
 	return nil
 }
 

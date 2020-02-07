@@ -39,7 +39,7 @@ func resourceXmlJobCreate(d *schema.ResourceData, m interface{}) error {
 	}
 
 	d.SetId(name)
-	resourceXmlJobRead(d, m)
+	_ = resourceXmlJobRead(d, m)
 	return nil
 }
 
@@ -57,7 +57,7 @@ func resourceXmlJobRead(d *schema.ResourceData, m interface{}) error {
 		return err
 	}
 
-	d.Set("xml", xml)
+	_ = d.Set("xml", xml)
 	return nil
 }
 
@@ -75,7 +75,7 @@ func resourceXmlJobUpdate(d *schema.ResourceData, m interface{}) error {
 		return err
 	}
 
-	d.Set("xml", xml)
+	_ = d.Set("xml", xml)
 	return nil
 }
 
