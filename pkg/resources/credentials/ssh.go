@@ -2,10 +2,11 @@ package credentials
 
 import (
 	"fmt"
+
+	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/credentials/util"
 	"github.com/thoas/go-funk"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
 )
 
 type sshProvider struct{}

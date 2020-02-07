@@ -1,9 +1,9 @@
 package credentials
 
 import (
+	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
 )
 
 type dockerProvider struct{}
@@ -19,45 +19,45 @@ func Docker() *schema.Resource {
 		Delete: manager.ResourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"username": &schema.Schema{
+			"username": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"identifier": &schema.Schema{
+			"identifier": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"domain": &schema.Schema{
+			"domain": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "_",
 			},
-			"jobpath": &schema.Schema{
+			"jobpath": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"description": &schema.Schema{
+			"description": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"scope": &schema.Schema{
+			"scope": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "global",
 			},
-			"server_ca_certificate": &schema.Schema{
+			"server_ca_certificate": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"client_certificate": &schema.Schema{
+			"client_certificate": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"client_key": &schema.Schema{
+			"client_key": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",

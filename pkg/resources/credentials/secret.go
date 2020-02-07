@@ -1,9 +1,9 @@
 package credentials
 
 import (
+	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
 )
 
 type secretProvider struct{}
@@ -19,30 +19,30 @@ func Secret() *schema.Resource {
 		Delete: manager.ResourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"secret": &schema.Schema{
+			"secret": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"identifier": &schema.Schema{
+			"identifier": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"domain": &schema.Schema{
+			"domain": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "_",
 			},
-			"jobpath": &schema.Schema{
+			"jobpath": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"description": &schema.Schema{
+			"description": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"scope": &schema.Schema{
+			"scope": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "global",

@@ -1,8 +1,8 @@
 package plugins
 
 import (
+	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
 )
 
 func Plugin() *schema.Resource {
@@ -13,11 +13,11 @@ func Plugin() *schema.Resource {
 		Delete: resourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"name": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"version": &schema.Schema{
+			"version": {
 				Type:     schema.TypeString,
 				Required: true,
 			},

@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
+	"github.com/bndr/gojenkins"
 )
 
 func XmlJob() *schema.Resource {

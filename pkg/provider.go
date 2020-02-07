@@ -3,11 +3,11 @@ package pkg
 import (
 	"github.com/hashicorp/terraform/helper/schema"
 
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/credentials"
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/job"
-	"github.com/vadimDidenko/terraform-provider-jenkins/resources/plugins"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/job"
+	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/plugins"
 
-	"github.com/piotrjaromin/gojenkins"
+	"github.com/bndr/gojenkins"
 )
 
 func Provider() *schema.Provider {

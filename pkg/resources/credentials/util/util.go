@@ -2,7 +2,7 @@ package util
 
 import (
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/piotrjaromin/gojenkins"
+	"github.com/bndr/gojenkins"
 )
 
 func getCMAndDomain(d *schema.ResourceData, m interface{}) (gojenkins.CredentialsManager, string, string) {
