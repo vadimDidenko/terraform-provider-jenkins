@@ -1,4 +1,4 @@
-package credentials
+package jenkins
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/thoas/go-funk"
-	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/util"
 )
 
 type sshProvider struct{}
@@ -16,7 +16,7 @@ const directValueType = "directValue"
 
 var valueTypes = []string{fileOnMasterType, directValueType}
 
-func ResourceSSHCredential() *schema.Resource {
+func resourceSSHCredential() *schema.Resource {
 
 	manager := util.CreateCredsManager(sshProvider{})
 

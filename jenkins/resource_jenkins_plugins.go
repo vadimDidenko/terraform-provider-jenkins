@@ -1,15 +1,15 @@
-package plugins
+package jenkins
 
 import (
 	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-func Plugin() *schema.Resource {
+func jenkinsPlugin() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceServerCreate,
-		Read:   resourceServerRead,
-		Update: resourceServerUpdate,
+		Create: resourcePluginCreate,
+		Read:   resourcePluginRead,
+		Update: resourcePluginUpdate,
 		Delete: resourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
@@ -25,7 +25,7 @@ func Plugin() *schema.Resource {
 	}
 }
 
-func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
+func resourcePluginCreate(d *schema.ResourceData, m interface{}) error {
 
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
@@ -41,7 +41,7 @@ func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerRead(d *schema.ResourceData, m interface{}) error {
+func resourcePluginRead(d *schema.ResourceData, m interface{}) error {
 
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
@@ -61,8 +61,8 @@ func resourceServerRead(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
-	return resourceServerCreate(d, m)
+func resourcePluginUpdate(d *schema.ResourceData, m interface{}) error {
+	return resourcePluginCreate(d, m)
 }
 
 func resourceServerDelete(d *schema.ResourceData, m interface{}) error {

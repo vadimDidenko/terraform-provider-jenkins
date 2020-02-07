@@ -1,4 +1,4 @@
-package job
+package jenkins
 
 import (
 	"errors"
@@ -7,12 +7,12 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-func ResourceXmlJob() *schema.Resource {
+func resourceXmlJob() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceServerCreate,
-		Read:   resourceServerRead,
-		Update: resourceServerUpdate,
-		Delete: resourceServerDelete,
+		Create: resourceXmlJobCreate,
+		Read:   resourceXmlJobRead,
+		Update: resourceXmlJobUpdate,
+		Delete: resourceXmlJobDelete,
 
 		Schema: map[string]*schema.Schema{
 			"name": {
@@ -27,7 +27,7 @@ func ResourceXmlJob() *schema.Resource {
 	}
 }
 
-func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
+func resourceXmlJobCreate(d *schema.ResourceData, m interface{}) error {
 
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
@@ -39,11 +39,11 @@ func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 	}
 
 	d.SetId(name)
-	resourceServerRead(d, m)
+	resourceXmlJobRead(d, m)
 	return nil
 }
 
-func resourceServerRead(d *schema.ResourceData, m interface{}) error {
+func resourceXmlJobRead(d *schema.ResourceData, m interface{}) error {
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
 
@@ -61,7 +61,7 @@ func resourceServerRead(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
+func resourceXmlJobUpdate(d *schema.ResourceData, m interface{}) error {
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
 
@@ -79,7 +79,7 @@ func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerDelete(d *schema.ResourceData, m interface{}) error {
+func resourceXmlJobDelete(d *schema.ResourceData, m interface{}) error {
 	client := m.(*gojenkins.Jenkins)
 	name := d.Get("name").(string)
 
