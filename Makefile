@@ -2,7 +2,7 @@ NAME=terraform-provider-jenkins
 
 
 build:
-	go build -o $(NAME) cmd/provider/main.go
+	go build -o $(NAME) main.go
 
 check:
 	make build

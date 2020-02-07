@@ -1,8 +1,8 @@
 package jenkins
 
 import (
-	"github.com/hashicorp/terraform/helper/schema"
-
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials"
 	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/job"
 	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/plugins"
@@ -10,7 +10,7 @@ import (
 	"github.com/bndr/gojenkins"
 )
 
-func Provider() *schema.Provider {
+func Provider() terraform.ResourceProvider  {
 
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
@@ -40,12 +40,12 @@ func Provider() *schema.Provider {
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
-			"jenkins_job_xml":             job.XmlJob(),
+			"jenkins_job_xml":             job.ResourceXmlJob(),
 			"jenkins_plugin":              plugins.Plugin(),
-			"jenkins_username_credential": credentials.Username(),
-			"jenkins_secret_credential":   credentials.Secret(),
-			"jenkins_ssh_credential":      credentials.SSH(),
-			"jenkins_docker_credential":   credentials.Docker(),
+			"jenkins_username_credential": credentials.ResourceUsernameCredential(),
+			"jenkins_secret_credential":   credentials.ResourceSecretCredential(),
+			"jenkins_ssh_credential":      credentials.ResourceSSHCredential(),
+			"jenkins_docker_credential":   credentials.ResourceDockerCredential(),
 		},
 		ConfigureFunc: configureFunc,
 	}

@@ -3,11 +3,11 @@ package job
 import (
 	"errors"
 
-	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/bndr/gojenkins"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-func XmlJob() *schema.Resource {
+func ResourceXmlJob() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceServerCreate,
 		Read:   resourceServerRead,

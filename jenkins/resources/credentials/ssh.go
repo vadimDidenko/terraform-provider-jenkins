@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/bndr/gojenkins"
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/thoas/go-funk"
 	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
 )
@@ -16,7 +16,7 @@ const directValueType = "directValue"
 
 var valueTypes = []string{fileOnMasterType, directValueType}
 
-func SSH() *schema.Resource {
+func ResourceSSHCredential() *schema.Resource {
 
 	manager := util.CreateCredsManager(sshProvider{})
 

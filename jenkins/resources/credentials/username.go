@@ -2,13 +2,13 @@ package credentials
 
 import (
 	"github.com/bndr/gojenkins"
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
 )
 
 type usernameProvider struct{}
 
-func Username() *schema.Resource {
+func ResourceUsernameCredential() *schema.Resource {
 
 	manager := util.CreateCredsManager(usernameProvider{})
 
