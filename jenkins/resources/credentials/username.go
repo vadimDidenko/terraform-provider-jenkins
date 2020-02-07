@@ -3,7 +3,7 @@ package credentials
 import (
 	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
 )
 
 type usernameProvider struct{}
@@ -19,35 +19,35 @@ func Username() *schema.Resource {
 		Delete: manager.ResourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"username": &schema.Schema{
+			"username": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"identifier": &schema.Schema{
+			"identifier": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"password": &schema.Schema{
+			"password": {
 				Type:      schema.TypeString,
 				Required:  true,
 				Sensitive: true,
 			},
-			"domain": &schema.Schema{
+			"domain": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "_",
 			},
-			"jobpath": &schema.Schema{
+			"jobpath": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"description": &schema.Schema{
+			"description": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"scope": &schema.Schema{
+			"scope": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "global",

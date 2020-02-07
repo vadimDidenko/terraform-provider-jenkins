@@ -1,11 +1,11 @@
-package pkg
+package jenkins
 
 import (
 	"github.com/hashicorp/terraform/helper/schema"
 
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials"
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/job"
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/plugins"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/job"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/plugins"
 
 	"github.com/bndr/gojenkins"
 )

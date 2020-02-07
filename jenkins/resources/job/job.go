@@ -15,11 +15,11 @@ func XmlJob() *schema.Resource {
 		Delete: resourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"name": &schema.Schema{
+			"name": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"xml": &schema.Schema{
+			"xml": {
 				Type:     schema.TypeString,
 				Required: true,
 			},

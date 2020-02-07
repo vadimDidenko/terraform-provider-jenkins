@@ -6,7 +6,7 @@ import (
 	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/thoas/go-funk"
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
 )
 
 type sshProvider struct{}
@@ -27,44 +27,44 @@ func SSH() *schema.Resource {
 		Delete: manager.ResourceServerDelete,
 
 		Schema: map[string]*schema.Schema{
-			"identifier": &schema.Schema{
+			"identifier": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"username": &schema.Schema{
+			"username": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"passphrase": &schema.Schema{
+			"passphrase": {
 				Type:      schema.TypeString,
 				Required:  true,
 				Sensitive: true,
 			},
-			"domain": &schema.Schema{
+			"domain": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "_",
 			},
-			"jobpath": &schema.Schema{
+			"jobpath": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"description": &schema.Schema{
+			"description": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "",
 			},
-			"scope": &schema.Schema{
+			"scope": {
 				Type:     schema.TypeString,
 				Optional: true,
 				Default:  "global",
 			},
-			"value": &schema.Schema{
+			"value": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"value_type": &schema.Schema{
+			"value_type": {
 				Type:         schema.TypeString,
 				Required:     true,
 				ValidateFunc: validateSSHType,

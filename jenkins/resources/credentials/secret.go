@@ -3,7 +3,7 @@ package credentials
 import (
 	"github.com/bndr/gojenkins"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/vadimDidenko/terraform-provider-jenkins/pkg/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/jenkins/resources/credentials/util"
 )
 
 type secretProvider struct{}

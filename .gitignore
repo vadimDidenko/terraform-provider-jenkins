@@ -3,4 +3,3 @@ crash.log
 terraform.tfstate
 terraform.tfstate.backup
 .terraform
-main.tf
