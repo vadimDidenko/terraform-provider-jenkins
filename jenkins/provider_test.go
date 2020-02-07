@@ -7,26 +7,26 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
-var testAccProvider *schema.Provider
-var testAccProviders map[string]terraform.ResourceProvider
-var testAccProviderFactories func(providers *[]*schema.Provider) map[string]terraform.ResourceProviderFactory
-var testAccProviderFunc func() *schema.Provider
+var testJenkinsProvider *schema.Provider
+var testJenkinsProviders map[string]terraform.ResourceProvider
+var testJenkinsProviderFactories func(providers *[]*schema.Provider) map[string]terraform.ResourceProviderFactory
+var testJenkinsProviderFunc func() *schema.Provider
 
 func init() {
-	testAccProvider = Provider().(*schema.Provider)
-	testAccProviders = map[string]terraform.ResourceProvider{
-		"aws": testAccProvider,
+	testJenkinsProvider = Provider().(*schema.Provider)
+	testJenkinsProviders = map[string]terraform.ResourceProvider{
+		"jenkins": testJenkinsProvider,
 	}
-	testAccProviderFactories = func(providers *[]*schema.Provider) map[string]terraform.ResourceProviderFactory {
+	testJenkinsProviderFactories = func(providers *[]*schema.Provider) map[string]terraform.ResourceProviderFactory {
 		return map[string]terraform.ResourceProviderFactory{
-			"aws": func() (terraform.ResourceProvider, error) {
+			"jenkins": func() (terraform.ResourceProvider, error) {
 				p := Provider()
 				*providers = append(*providers, p.(*schema.Provider))
 				return p, nil
 			},
 		}
 	}
-	testAccProviderFunc = func() *schema.Provider { return testAccProvider }
+	testJenkinsProviderFunc = func() *schema.Provider { return testJenkinsProvider }
 }
 
 func TestProvider(t *testing.T) {
