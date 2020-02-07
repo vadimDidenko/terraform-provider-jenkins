@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/piotrjaromin/gojenkins"
-	"github.com/piotrjaromin/terraform-provider-jenkins/pkg/resources/credentials/util"
+	"github.com/vadimDidenko/terraform-provider-jenkins/resources/credentials/util"
 	"github.com/thoas/go-funk"
 )
 
