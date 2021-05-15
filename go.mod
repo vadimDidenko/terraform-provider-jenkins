@@ -3,7 +3,7 @@ module github.com/vadimDidenko/terraform-provider-jenkins
 go 1.13
 
 require (
-	github.com/bndr/gojenkins v1.0.1
+	github.com/bndr/gojenkins v1.1.0
 	github.com/go-ini/ini v1.32.0 // indirect
 	github.com/hashicorp/go-hclog v0.12.0 // indirect
 	github.com/hashicorp/go-uuid v1.0.2 // indirect
