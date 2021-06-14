@@ -3,20 +3,23 @@ module github.com/vadimDidenko/terraform-provider-jenkins
 go 1.13
 
 require (
+	github.com/bflad/tfproviderdocs v0.9.1
+	github.com/bflad/tfproviderlint v0.26.0
 	github.com/bndr/gojenkins v1.0.1
-	github.com/go-ini/ini v1.32.0 // indirect
-	github.com/hashicorp/go-hclog v0.12.0 // indirect
+	github.com/client9/misspell v0.3.4
+	github.com/golangci/golangci-lint v1.40.1
+	github.com/google/uuid v1.2.0 // indirect
+	github.com/hashicorp/errwrap v1.1.0 // indirect
+	github.com/hashicorp/go-plugin v1.4.1 // indirect
 	github.com/hashicorp/go-uuid v1.0.2 // indirect
-	github.com/hashicorp/golang-lru v0.5.4 // indirect
-	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/hashicorp/hcl2 v0.0.0-20191002203319-fb75b3253c80 // indirect
-	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
-	github.com/hashicorp/terraform v0.12.20
-	github.com/hashicorp/terraform-plugin-sdk v1.6.0
-	github.com/hashicorp/terraform-svchost v0.0.0-20191119180714-d2e4933b9136 // indirect
+	github.com/hashicorp/hcl/v2 v2.10.0 // indirect
+	github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2 // indirect
+	github.com/hashicorp/terraform-plugin-sdk v1.16.1
 	github.com/hashicorp/yamux v0.0.0-20190923154419-df201c70410d // indirect
-	github.com/smartystreets/goconvey v1.6.4 // indirect
+	github.com/mitchellh/cli v1.1.2 // indirect
 	github.com/thoas/go-funk v0.5.0
-	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
+	github.com/zclconf/go-cty v1.8.3 // indirect
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect
+	google.golang.org/api v0.44.0-impersonate-preview // indirect
 	gopkg.in/ini.v1 v1.52.0 // indirect
 )
